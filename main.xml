@@ -1,0 +1,352 @@
+<?xml version="1.0"?>
+
+<TeXmacs version="1.0.7.13">
+  <style><tuple>article</tuple></style>
+  
+  <body>
+    <tm-par>
+      <with font-series="medium">
+        <tm-par>
+          <with font="simsun"><tm-arg></tm-arg></with><doc-data>
+            <tm-arg><doc-title><with font="simsun"><with font-series="medium"><tm-arg></tm-arg></with><with
+            font-series="medium"><tm-arg></tm-arg></with>基于Z型六角铁氧体的天线设计</with></doc-title></tm-arg>
+            <tm-arg>
+              <doc-author-data>
+                <tm-arg><author-name>包利强</author-name></tm-arg>
+                <tm-arg>
+                  <author-address>
+                    <tm-par>
+                      华中科技大学
+                    </tm-par>
+                  </author-address>
+                </tm-arg>
+              </doc-author-data>
+            </tm-arg>
+            <tm-arg></tm-arg>
+          </doc-data>
+        </tm-par>
+        
+        <tm-par>
+          
+        </tm-par>
+      </with>
+    </tm-par>
+    
+    <tm-par>
+      <abstract>
+        <tm-par>
+          <with font-base-size="12">
+            <with par-line-sep="0.2fns">
+              <tm-par>
+                <with par-sep="0.2fn">
+                  <tm-par>
+                    <with par-sep="0.3fn">
+                      <tm-par>
+                        <with par-sep="0.5fn">
+                          <tm-par>
+                            信息技术的快速发展对传统的天线技术提出了挑战，特别是移动硬件和大数据的广泛使用迫切要求缩小传统天线的尺寸。但同时，针对传统天线的结构化调整也已经走到了尽头，人们逐渐把视线转移到了天线基底材料的研究。由天线理论可得天线的尺寸反比于天线的工作频率，因此在甚高频段（30-300MHz），天线的尺寸一般较大（约为40cm），从而严重影响天线在小型化移动设备和无线领域中的使用。
+                          </tm-par>
+                        </with>
+                      </tm-par>
+                    </with>
+                  </tm-par>
+                </with>
+              </tm-par>
+            </with>
+          </with>
+        </tm-par>
+      </abstract>
+    </tm-par>
+    
+    <tm-par>
+      <section>绪论</section>
+    </tm-par>
+    
+    <tm-par>
+      <subsection>研究背景与意义</subsection>
+    </tm-par>
+    
+    <tm-par>
+      <with font-base-size="12">
+        <with par-sep="0.5fn">
+          <tm-par>
+            <with par-sep="0.7fn">
+              <tm-par xml:space="preserve">  随着科学的发展，人类社会已经进入信息时代，信息的快速和广泛传递迫切要求无线通信技术的发展和无线应用的普及。同时，在最近的几十年里，移动系统和设备在个人数据通信和多媒体数字广播服务中的崛起，使得通信技术以及相应的材料和设备在甚高频领域（VHF,30-300MHz）吸引了很多的关注。电子设备的功能的功能越来越强大，信号带宽也在不断提高。这些都要依靠天线技术的应用和发展。</tm-par>
+              
+              <tm-par>
+                天线的研究可以追溯到19世纪后半叶。1864年12月，麦克斯韦总结以往的电磁学方面的实践和理论，提出了电磁场的完整方程组，并预言了电磁波的存在性以及电磁波与光波的同一性。1888年德国物理学家赫兹用试验，验证了麦克斯韦关于电磁波存在的设想。1901年，意大利无线电工程师马可尼在英国和纽芬兰之间，实现横跨大西洋的无线电通讯，使无线电达到实用阶段。随着时间的推移，人们对无线电在民用上乃至军事上的应用的认识更加深刻，从而在这些领域的研究突飞猛进，天线理论研究和技术应用有了新的跨越，各种新颖、高效的天线如雨后春笋般的开发出来，被应用于各个方面。
+              </tm-par>
+              
+              <tm-par>
+                辐射和接收无线电波是天线设备的基本功能。然而天线的体积通常受限于天线的工作频率，天线的长度一般为相应于工作频率无线电波波长的四分之一左右，甚高频段天线的长度达到了几十厘米。过大的天线尺寸已经成为天线在移动设备和小型化系统中应用的障碍。近年来高清数字电视迅速发展，在数字电视扁平化和移动化的发展模式下，传统的地面数字多媒体广播(T-DMB)天线由于其较大的体积和较高的剖面等原因，已经不能满足需求，T-DMB天线的小型化成为一个非常重要的问题。目前商业使用的T-DMB天线主要为单极棒状螺旋天线。然而，为了满足在移动端和更薄数字电视上的使用，这个天线的体积和增益还需要进一步进行优化。
+              </tm-par>
+              
+              <tm-par xml:space="preserve">目前天线技术相关的研究一般是集中于在高频领域减小天线的尺寸。而实现天线小型化一般有三个途径：第一种是通过使用容性或者感性负载以及蛇形线来获得慢波谐振以实现天线结构的紧凑，从而实现小型化。其主要缺点是增加了损耗和减小了带宽。第二种是采用高介电材料来制作天线的基板从而实现天线的小型化。尽管使用高介电材料基板能够实现天线的小型化，但是同样该方法具有两个明显的缺点：其一，电磁场高度残留集中在高介电常数区域（电磁场禁闭效应）降低了天线的效率，同时使其产生了窄带特性；其二，高介电材料具有非常低的特征阻抗，难以实现天线的阻抗匹配。第三是使用磁导率和介电常数数值较高且相近的磁电材料。我们知道天线的尺寸是由其波长决定的，而波长则是由天线的工作频率和制作天线的材料决定。他们之间的关系为 </tm-par>
+              
+              <tm-par>
+                <equation>
+                  <tm-par>
+                    <label>eq:light</label>λ=c/f<sqrt>ε<rsup>r</rsup>μ<rsup>r</rsup></sqrt>≈c/f<sqrt>ε<rprime>'</rprime>μ<rprime>'</rprime></sqrt>
+                  </tm-par>
+                </equation>
+              </tm-par>
+              
+              <tm-par>
+                其中，<math>λ</math>是传输波长，<math>c</math>是真空中的光速，<math>f</math>是工作频率,<math>ε<rsup>r</rsup></math>是相对介电常数，<math>μ<rsup>r</rsup></math>是相对磁导率，<math>ε<rprime>'</rprime></math>是相对介电常数的实部，<math>u<rprime>'</rprime></math>是相对磁导率的实部。由此可见，通过提高复介电常数实部和复磁导率的实部可以减少天线尺寸，其实<strong><math>f=<sqrt>ε<rprime>'</rprime>μ<rprime>'</rprime></sqrt></math></strong>也是微波天线小型化因子的定义。在天线理论中，任何复杂的天线都可以看成是电基本振子组成的，假定天线处于复介电常数为<math>ε=ε<rprime>'</rprime>-j<tm-sym>space</tm-sym>
+                ε<rprime>''</rprime></math>、复磁导率为<math>μ=μ<rprime>'</rprime>-j
+                μ<rprime>''</rprime></math>、电导率为<math>σ</math>的线性均匀有耗导电媒质中，工作频率为<math>ω</math>，由坡印廷定理得到天线谐振工作时的能流密度为
+              </tm-par>
+              
+              <tm-par>
+                <eqnarray_42_>
+                  <tm-par>
+                    <tformat>
+                      <table>
+                        <tm-arg><row><tm-arg><cell><label>eq:poyinting</label>-<big>oint</big><rsub>S</rsub><wide><tm-arg>S</tm-arg><tm-arg><tm-sym>vect</tm-sym></tm-arg></wide>⋅d<wide><tm-arg>s</tm-arg><tm-arg><tm-sym>vect</tm-sym></tm-arg></wide>=<big>int</big><rsub>V</rsub>p<rsub>c</rsub>dV+2jω<big>int</big><rsub>V</rsub><around_42_><tm-arg>(</tm-arg><tm-arg>w<rsub>m</rsub>-w<rsub>e</rsub></tm-arg><tm-arg>)</tm-arg></around_42_>dV</cell></tm-arg><tm-arg><cell><tm-arg></tm-arg></cell></tm-arg><tm-arg><cell><tm-arg></tm-arg></cell></tm-arg></row></tm-arg>
+                        <tm-arg><row><tm-arg><cell>=<big>int</big><rsub>V</rsub><around_42_><tm-arg>(</tm-arg><tm-arg>σE<rsup>2</rsup>+ωε<rprime>''</rprime>E<rsup>2</rsup>+ωμ<rprime>''</rprime>H<rsup>2</rsup></tm-arg><tm-arg>)</tm-arg></around_42_>dV
+                        +jω<big>int</big><rsub>V</rsub><around_42_><tm-arg>(</tm-arg><tm-arg>μ<rprime>'</rprime>H<rsup>2</rsup>-ε<rprime>'</rprime>E<rsup>2</rsup></tm-arg><tm-arg>)</tm-arg></around_42_>dV</cell></tm-arg><tm-arg><cell><tm-arg></tm-arg></cell></tm-arg><tm-arg><cell><eq-number/></cell></tm-arg></row></tm-arg>
+                      </table>
+                    </tformat>
+                  </tm-par>
+                </eqnarray_42_>
+              </tm-par>
+              
+              <tm-par>
+                其中，<math>s</math>为包围天线的任意形状的有向闭合曲面，<math>V</math>是该闭合曲线围成的体积，<math>w<rsub>e</rsub>=<frac><tm-arg>1</tm-arg><tm-arg>2</tm-arg></frac>ε<rprime>'</rprime>E<rsup>2</rsup></math>和<math>w<rsub>m</rsub>=<frac><tm-arg>1</tm-arg><tm-arg>2</tm-arg></frac>μ<rprime>'</rprime>H<rsup>2</rsup></math>分别是单位体积内的电场和磁场平均储能密度，<math>p<rsub>c</rsub></math>是媒质材料因电磁损耗而产生的焦耳功率密度（即热功率密度和耗散功率密度），<math><wide><tm-arg>S</tm-arg><tm-arg><tm-sym>vect</tm-sym></tm-arg></wide></math>是电磁波产生的坡印廷矢量（即能流密度矢量，<math><wide><tm-arg>S</tm-arg><tm-arg><tm-sym>vect</tm-sym></tm-arg></wide>=<wide><tm-arg>E*</tm-arg><tm-arg><tm-sym>vect</tm-sym></tm-arg></wide>×<wide><tm-arg>H</tm-arg><tm-arg><tm-sym>vect</tm-sym></tm-arg></wide></math>）。由<reference>eq:poyinting</reference>可见，在天线工作时，与“源”解耦的辐射能一部分以焦耳热的形式耗散在损耗电阻上，另一部分能量则存储在近场区中，对外表现为表现为电抗。所以只有当公式中第二部分即表现为电抗的能量降到最低，天线的工作效率才能得到提高。因此也就要求天线基底材料的复介电常数实部和复磁导率实部越接近越好。
+              </tm-par>
+              
+              <tm-par>
+                铁氧体材料多数具有较高的磁导率和相对较低的介电常数，同时也具有较高的电阻率，理论上可以作为一种理想的天线小型化材料。在整个铁氧体家族中，尖晶石型铁氧体和六角铁氧体分别在不同的频段作为天线的基底材料。由于受到Sneok定律的限制，尖晶石铁氧体的截止频率一般在几百兆赫兹左右，这种材料被广泛地适用于甚高频领域的天线设计之中。而六角晶系铁氧体与尖晶石铁氧体相比则具有较高的磁晶各向异性，理论共振频率高达GHz以上，特别是平面六角铁氧体，在起始磁导率、截止频率和稳定性等方面都由于尖晶石铁氧体，因而成为研究人员研究的热点材料。
+              </tm-par>
+            </with>
+          </tm-par>
+        </with>
+      </with>
+    </tm-par>
+    
+    <tm-par>
+      <subsection>国内外研究概况</subsection>
+    </tm-par>
+    
+    <tm-par>
+      <subsubsection>小型化天线基底材料的研究</subsubsection>
+    </tm-par>
+    
+    <tm-par>
+      <with par-sep="0.5fn">
+        <tm-par>
+          <with xml:space="preserve" font-base-size="12">  华中科技大学的聂彦等人<cite>lzs-nieyan</cite>制备了一类锶取代的平面六角铁氧体材料，锶的取代调节了材料的高频特性。通过SEM和XRD的分析，证明材料的主相是Z相，并具有优良的磁电特性和损耗特性。在1050<math><tm-arg></tm-arg></math>℃下烧结的样品产生的损耗角正切仅为介电损耗角正切仅为0.05，小型化因子在2GHz下达到了11.2。</with>
+        </tm-par>
+        
+        <tm-par>
+          <with font-base-size="12">
+            <tm-par>
+              成都电子科技大学的TingQiang
+              Wu等人通过传统的陶瓷技术制备了一种铝替代的Z型六角铁氧体材料<math><around_42_><tm-arg>(</tm-arg><tm-arg>Ba<rsub>0.5</rsub>Sr<rsub>0.5</rsub></tm-arg><tm-arg>)</tm-arg></around_42_><rsub>3</rsub>Co<rsub>2</rsub>Fe<rsub>20.4</rsub>Al<rsub>1.6</rsub>O<rsub>38</rsub></math>，发现Al的掺杂提高了陶瓷的烧结和铁氧体的密度，增加了介电常数。与其他材料相比，该材料在致密程度、显微结构、磁特性和损耗等方面都有着非常好的特性，可以用来进行微带天线小型化的研究。
+            </tm-par>
+            
+            <tm-par>
+              电子科技大学的C.H.Mu等人制备了<math>MgTiO<rsub>3</rsub></math>掺杂的<math>Ba<rsub>3</rsub>Co<rsub>2</rsub>Fe<rsub>24</rsub>O<rsub>41</rsub></math>样品，发现<math>Ti<rsup>4+</rsup></math>离子对<math>Fe<rsup>3+</rsup></math>离子的取代促进了铁氧体晶粒的生长，并提高了磁导率和介电常数，有效降低了损耗。同时，磁导率的截止频率随着掺杂的增多从0.33GHz上升到1.8GHz，是一种良好的天线小型化软磁材料。
+            </tm-par>
+            
+            <tm-par>
+              美国亚拉巴马大学电子与计算机工程系和MINT中心的研究人员，通过将摇磨40h的<math>Co<rsub>2</rsub>Z</math>六角铁氧体和一种在950℃下烧结1h硼硅酸盐玻璃混合，得到了一种低损耗的复合材料。当玻璃材料的含量增加到4
+              wt.%时，磁导率和介电常数实部分别为1.96和7.28。在2.4GHz的频率下，磁损耗和介电损耗分别降至0.02和0.01以下。这种材料对于GHz频率的微波天线小型化是有研究价值的。
+            </tm-par>
+            
+            <tm-par>
+              电子科技大学的ZhengZongliang等人通过固相反应发合成了一种NiZn铁氧体和<math>Co<rsub>2</rsub>Z</math>六角铁氧体的复合材料。研究发现，当NiZn铁氧体的含量增加到65wt.%时，材料表现出了相同的磁导率和介电常数实部，同时小型化因子达到15，并具有足够低的磁损耗和介电损耗。这种材料做成的微波天线对自由空间将具有良好的阻抗匹配。
+            </tm-par>
+          </with>
+        </tm-par>
+      </with>
+    </tm-par>
+    
+    <tm-par>
+      <subsubsection>天线小型化设计研究</subsubsection>
+    </tm-par>
+    
+    <tm-par>
+      <with font-base-size="12">
+        <tm-par xml:space="preserve"> 亚拉巴马大学电子计算机工程系和MINT研究中心制成了一种0.029波长小型化的Co六角铁氧体地面数字多媒体广播天线（T-DMB）。该天线通过在<math>Co<rsub>2</rsub>Z</math>六角铁氧体矩形方块上缠绕12匝铜带制成，被加载在一个和同轴馈线连接的地面基片上面。通过实验测定，该天线的中心频率约为196.2MHz左右，在195MHz频率下3D平均增益为6.55dB，辐射频率为22.13%。这种天线的尺寸比普通介电天线要小约60%。<math>Co<rsub>2</rsub>Z</math>六角铁氧体在天线小型化方面表现出了优良的特性。</tm-par>
+        
+        <tm-par>
+          E.M.W天线公司研究和发展中心的Jeong Keun
+          Ji等人制备了一种低损耗的Ni-Mn-Co铁氧体材料，这种材料具有相近的介电常数实部和磁导率实部，并在200MHz的时候具有很低的损耗角正切。小型化因子达到8左右。研究人员还在这种材料的基础上设计了一款螺旋地面数字多媒体广播天线，具有优良的参数和性能。
+        </tm-par>
+      </with>
+    </tm-par>
+    
+    <tm-par>
+      <subsection>论文主要研究内容</subsection>
+    </tm-par>
+    
+    <tm-par xml:space="preserve"> 本文的研究目的主要是利用已有的天线设计的理论研究在甚高频段下地面数字多媒体广播天线（T-DMB）的小型化问题。其中包含两个方面：一是通过传统的固相烧结陶瓷制备工艺探讨掺杂的平面Z型六角铁氧体的参数优化问题；二是使用有限元分析软件HFSS进行T-DMB天线的设计和仿真工作，优化天线的各向性能参数，从而得到一种可以满足发展需要的小型化微波天线。</tm-par>
+    
+    <tm-par>
+      本文的主要内容安排如下：
+    </tm-par>
+    
+    <tm-par>
+      第一章，。。。
+    </tm-par>
+    
+    <tm-par>
+      
+    </tm-par>
+    
+    <tm-par>
+      
+    </tm-par>
+  </body>
+  
+  <initial>
+    <collection>
+      <tm-arg>
+        <associate>
+          <tm-arg>font</tm-arg>
+          <tm-arg>sys-chinese</tm-arg>
+        </associate>
+      </tm-arg>
+      <tm-arg>
+        <associate>
+          <tm-arg>language</tm-arg>
+          <tm-arg>chinese</tm-arg>
+        </associate>
+      </tm-arg>
+      <tm-arg>
+        <associate>
+          <tm-arg>par-first</tm-arg>
+          <tm-arg>1.8fn</tm-arg>
+        </associate>
+      </tm-arg>
+    </collection>
+  </initial>
+  
+  <references>
+    <collection>
+      <tm-arg>
+        <associate>
+          <tm-arg>2</tm-arg>
+          <tm-arg><tuple><tm-arg>1</tm-arg><tm-arg>?</tm-arg></tuple></tm-arg>
+        </associate>
+      </tm-arg>
+      <tm-arg>
+        <associate>
+          <tm-arg>auto-1</tm-arg>
+          <tm-arg><tuple><tm-arg>1</tm-arg><tm-arg>1</tm-arg></tuple></tm-arg>
+        </associate>
+      </tm-arg>
+      <tm-arg>
+        <associate>
+          <tm-arg>auto-2</tm-arg>
+          <tm-arg><tuple><tm-arg>1.1</tm-arg><tm-arg>1</tm-arg></tuple></tm-arg>
+        </associate>
+      </tm-arg>
+      <tm-arg>
+        <associate>
+          <tm-arg>auto-3</tm-arg>
+          <tm-arg><tuple><tm-arg>1.2</tm-arg><tm-arg>3</tm-arg></tuple></tm-arg>
+        </associate>
+      </tm-arg>
+      <tm-arg>
+        <associate>
+          <tm-arg>auto-4</tm-arg>
+          <tm-arg><tuple><tm-arg>1.2.1</tm-arg><tm-arg>3</tm-arg></tuple></tm-arg>
+        </associate>
+      </tm-arg>
+      <tm-arg>
+        <associate>
+          <tm-arg>auto-5</tm-arg>
+          <tm-arg><tuple><tm-arg>1.2.2</tm-arg><tm-arg>4</tm-arg></tuple></tm-arg>
+        </associate>
+      </tm-arg>
+      <tm-arg>
+        <associate>
+          <tm-arg>auto-6</tm-arg>
+          <tm-arg><tuple><tm-arg>1.3</tm-arg><tm-arg>?</tm-arg></tuple></tm-arg>
+        </associate>
+      </tm-arg>
+      <tm-arg>
+        <associate>
+          <tm-arg>bib-lzs-nieyan</tm-arg>
+          <tm-arg><tuple><tm-arg>1</tm-arg><tm-arg>?</tm-arg></tuple></tm-arg>
+        </associate>
+      </tm-arg>
+      <tm-arg>
+        <associate>
+          <tm-arg>eq:2</tm-arg>
+          <tm-arg><tuple><tm-arg>1</tm-arg><tm-arg>?</tm-arg></tuple></tm-arg>
+        </associate>
+      </tm-arg>
+      <tm-arg>
+        <associate>
+          <tm-arg>eq:light</tm-arg>
+          <tm-arg><tuple><tm-arg>1</tm-arg><tm-arg>2</tm-arg></tuple></tm-arg>
+        </associate>
+      </tm-arg>
+      <tm-arg>
+        <associate>
+          <tm-arg>eq:poyinting</tm-arg>
+          <tm-arg><tuple><tm-arg>1</tm-arg><tm-arg>2</tm-arg></tuple></tm-arg>
+        </associate>
+      </tm-arg>
+    </collection>
+  </references>
+  
+  <auxiliary>
+    <collection>
+      <tm-arg>
+        <associate>
+          <tm-arg>bib</tm-arg>
+          <tm-arg>
+            <tm-par>
+              lzs-nieyan
+            </tm-par>
+          </tm-arg>
+        </associate>
+      </tm-arg>
+      <tm-arg>
+        <associate>
+          <tm-arg>toc</tm-arg>
+          <tm-arg>
+            <tm-par>
+              <vspace_42_>1fn</vspace_42_><with font-series="bold" math-font-series="bold">1<space>2spc</space>绪论</with>
+              <datoms><tm-arg><macro><tm-arg>x</tm-arg><tm-arg><repeat><tm-arg><arg>x</arg></tm-arg><tm-arg><with
+              font-series="medium"><with font-size="1"><space>0.2fn</space>.<space>0.2fn</space></with></with></tm-arg></repeat></tm-arg></macro></tm-arg><tm-arg><htab>5mm</htab></tm-arg></datoms>
+              <no-break/><pageref>auto-1</pageref><vspace>0.5fn</vspace>
+            </tm-par>
+            
+            <tm-par>
+              <with par-left="1.5fn">1.1<space>2spc</space>研究背景与意义
+              <datoms><tm-arg><macro><tm-arg>x</tm-arg><tm-arg><repeat><tm-arg><arg>x</arg></tm-arg><tm-arg><with
+              font-series="medium"><with font-size="1"><space>0.2fn</space>.<space>0.2fn</space></with></with></tm-arg></repeat></tm-arg></macro></tm-arg><tm-arg><htab>5mm</htab></tm-arg></datoms>
+              <no-break/><pageref>auto-2</pageref></with>
+            </tm-par>
+            
+            <tm-par>
+              <with par-left="1.5fn">1.2<space>2spc</space>国内外研究概况
+              <datoms><tm-arg><macro><tm-arg>x</tm-arg><tm-arg><repeat><tm-arg><arg>x</arg></tm-arg><tm-arg><with
+              font-series="medium"><with font-size="1"><space>0.2fn</space>.<space>0.2fn</space></with></with></tm-arg></repeat></tm-arg></macro></tm-arg><tm-arg><htab>5mm</htab></tm-arg></datoms>
+              <no-break/><pageref>auto-3</pageref></with>
+            </tm-par>
+            
+            <tm-par>
+              <with par-left="3fn">1.2.1<space>2spc</space>小型化天线基底材料的研究
+              <datoms><tm-arg><macro><tm-arg>x</tm-arg><tm-arg><repeat><tm-arg><arg>x</arg></tm-arg><tm-arg><with
+              font-series="medium"><with font-size="1"><space>0.2fn</space>.<space>0.2fn</space></with></with></tm-arg></repeat></tm-arg></macro></tm-arg><tm-arg><htab>5mm</htab></tm-arg></datoms>
+              <no-break/><pageref>auto-4</pageref></with>
+            </tm-par>
+            
+            <tm-par>
+              <with par-left="3fn">1.2.2<space>2spc</space>天线小型化设计研究
+              <datoms><tm-arg><macro><tm-arg>x</tm-arg><tm-arg><repeat><tm-arg><arg>x</arg></tm-arg><tm-arg><with
+              font-series="medium"><with font-size="1"><space>0.2fn</space>.<space>0.2fn</space></with></with></tm-arg></repeat></tm-arg></macro></tm-arg><tm-arg><htab>5mm</htab></tm-arg></datoms>
+              <no-break/><pageref>auto-5</pageref></with>
+            </tm-par>
+          </tm-arg>
+        </associate>
+      </tm-arg>
+    </collection>
+  </auxiliary>
+</TeXmacs>
